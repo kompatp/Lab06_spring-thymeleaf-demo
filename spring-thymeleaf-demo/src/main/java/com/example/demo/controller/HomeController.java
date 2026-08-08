@@ -1,0 +1,21 @@
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+
+    @GetMapping("/")
+    public String home(Model model) {
+        model.addAttribute("message", "Hello from กรมภัฏ พิริยะ");
+        model.addAttribute("studentId", "673380262-4");
+        return "home"; // ไม่ใช่ path ไฟล์ แค่ "ชื่อ view" เชิงตรรกะเท่านั้น
+    }
+    @GetMapping("/about")
+    public String about(Model model) {
+        model.addAttribute("message", "สวัสดีครับ ผมนายกรมภัฏ พิริยะ 673380262-4 Sec.2 เรียน CP-CS KKU รุ่นที่ 61 ครับ");
+        return "about"; // ไม่ใช่ path ไฟล์ แค่ "ชื่อ view" เชิงตรรกะเท่านั้น
+    }
+}
